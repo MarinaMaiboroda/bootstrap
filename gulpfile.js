@@ -34,13 +34,19 @@ gulp.task('scripts', function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest('./prod/js/'))
-        .pipe(gulp.dest('./node_modules/bootstrap-sass/assets/javascript/bootstrap.js'))
-        .pipe(concat('bootstrap.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./prod/js/'))
         .pipe(notify({ message: 'Scripts task complete' }))
         .pipe(browserSync.reload({stream: true}));
 });
+
+gulp.task('scripts-bs', function() {
+    return gulp.src('./node_modules/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js')
+        .pipe(concat('custom-bootstrap.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest('./prod/js/'))
+        .pipe(notify({ message: 'Scripts-bs task complete' }))
+        .pipe(browserSync.reload({stream: true}));
+});        
 
 /* Minify image */
 gulp.task('images', () =>
@@ -82,7 +88,7 @@ gulp.task('html', function() {
 });
 
 /* Build */
-gulp.task('build', gulpSequence('clean', 'fonts', 'styles', 'scripts', 'images', 'html', 'browser-sync'));
+gulp.task('build', gulpSequence('clean', 'fonts', 'styles', 'scripts', 'scripts-bs', 'images', 'html', 'browser-sync'));
 
 
 /* Watcher */
