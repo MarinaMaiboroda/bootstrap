@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans');
+//font-family: 'Open Sans', sans-serif;
+//font-family: 'Montserrat', sans-serif;
+
 @import "helpers/variables";
 @import "helpers/mixins";
 
@@ -6,6 +10,9 @@
 @import "components/forms";
 
 @import "layout/header";
+@import "layout/footer";
+@import "layout/get-in-touch";
+@import "layout/social-icon";
 @import "layout/footer";
 
 @import "pages/home";

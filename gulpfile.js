@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     clean = require('gulp-dest-clean'),
     gulpSequence = require('gulp-sequence'),
     browserSync = require('browser-sync').create(),
-    fileinclude = require('gulp-file-include');
+    fileinclude = require('gulp-file-include'),
+    bsPath = "./node_modules/bootstrap-sass/assets/javascripts/bootstrap";
 
 /* Compile sass */
 gulp.task('styles', function () {
@@ -39,7 +40,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('scripts-bs', function() {
-    return gulp.src('./node_modules/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js')
+    return gulp.src([bsPath+'/dropdown.js'], [bsPath+'/transition.js'])
         .pipe(concat('custom-bootstrap.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
@@ -58,8 +59,12 @@ gulp.task('images', () =>
 /* Fonts to Dist */
 
 gulp.task('fonts', function() {
-    gulp.src('./dev/fonts/*.*')
+    var mainFont = gulp.src('./dev/fonts/*')
     .pipe(gulp.dest('./prod/fonts'));
+
+    var bsFonts = gulp.src('./node_modules/bootstrap-sass/assets/fonts/bootstrap/*')
+    .pipe(gulp.dest('./prod/fonts'));
+
 });
 
 /* Clean Prod Dir */

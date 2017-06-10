@@ -1,3 +1,6 @@
 *.psd
 node_modules/
 PSD/
+scss/
+sass/
+css/

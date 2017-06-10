@@ -1,9 +1,20 @@
-input{
-	background: #fefcf9;
+input,
+input.form-control{
+	background: $light;
 	border: none;
-	color: #60606e;
+	color: $font-color;
 }
 
 textarea{
-	background: 
+	//background: 
+}
+
+button,
+input[type="submit"],
+.btn{
+	@include btn-hover;
+
+	&.inverst{
+		@include btn-hover(true);
+	}
 }
