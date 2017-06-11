@@ -40,7 +40,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('scripts-bs', function() {
-    return gulp.src([bsPath+'/dropdown.js'], [bsPath+'/transition.js'])
+    return gulp.src([bsPath+'/dropdown.js'], [bsPath+'/transition.js'], [bsPath+'/tab.js'])
         .pipe(concat('custom-bootstrap.js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())

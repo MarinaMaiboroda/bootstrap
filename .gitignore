@@ -1,6 +1,6 @@
 *.psd
 node_modules/
 PSD/
-scss/
-sass/
+scss/pages/
+sass/pages/
 css/

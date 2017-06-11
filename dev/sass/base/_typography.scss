@@ -9,6 +9,7 @@ html, body{
 h1, h2, h3, h4, h5, h6{
 	font-family: $header-font;
 	line-height: 1;
+	text-transform: uppercase;
 }
 
 .main-header{
@@ -59,6 +60,15 @@ h1, h2, h3, h4, h5, h6{
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-bubble:before {
+  content: "\e96b";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-heart:before {
+  content: "\e9da";
+}
 .icon-facebook:before {
   content: "\ea90";
 }
@@ -77,8 +87,6 @@ h1, h2, h3, h4, h5, h6{
 .icon-pinterest:before {
   content: "\ead1";
 }
-
-
 
 .absolute{
 	position: absolute;

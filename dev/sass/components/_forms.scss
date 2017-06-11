@@ -2,7 +2,15 @@ input,
 input.form-control{
 	background: $light;
 	border: none;
+	border-radius: 0;
 	color: $font-color;
+	font-size: .75rem;
+}
+
+.input-group-btn{
+	button{
+		padding: 11px 15px;
+	}
 }
 
 textarea{
@@ -16,5 +24,9 @@ input[type="submit"],
 
 	&.inverst{
 		@include btn-hover(true);
+	}
+
+	&.btn-grey{
+		@include btn-hover(false, #e5e5e5, #999999);
 	}
 }

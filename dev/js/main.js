@@ -1,0 +1,1 @@
+$('.line-active-tab').tab();
